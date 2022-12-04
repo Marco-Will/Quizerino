@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizapp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16"  href="icons/favicon-16x16.png">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    
+</head>
+<body onload="init()">
+    
+    
+   
+    <div class="container">
+
+        <div class="card card-height" style="width: 35rem;">
+          <ul class="nav mobile_hide mobile_nav_bar">
+            <li class="nav-item">
+              <a onclick="restartGame()" class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="showQuestion()" class="nav-link" href="#">Animal</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="showQuestion2()" class="nav-link" href="#">Gamning</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Test</a>
+            </li>
+          </ul>
+           <div class="menu">
+                <div class="nav_head">
+                    <img src="img/logo.png" alt="">
+                    
+                </div>
+            <ul class="nav flex-column">
+
+             
+                <li class="nav-item">
+                  <a onclick="restartGame()" class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a id="menuFirstGame" onclick="showQuestion()" class="nav-link" >Animals</a>
+                </li>
+                <li class="nav-item">
+                  <a id="menuSecondGame" onclick="showQuestion2()" class="nav-link " href="#">Gaming</a>
+                </li>
+                <li class="nav-item">
+                  <a id="menuThirdGame" class="nav-link " href="#">Topic</a>
+                </li>
+                
+              </ul>
+              
+        </div>
+
+            <div id="questionCard" class="card-body margin-top ">
+              <h5 id="questionText" class="card-title"></h5>
+              
+              <div class="card quiz-answer-click mb-2" onclick="answer('answer_1')">
+
+                <div class="letter">
+                    A
+                </div>
+
+                <div id="answer_1" class="card-body">
+                  
+                </div>
+              </div>
+
+              <div class="card quiz-answer-click mb-2" onclick="answer('answer_2')">
+
+                <div class="letter">
+                    B
+                </div>
+
+                <div id="answer_2" class="card-body">
+                 
+                </div>
+              </div>
+
+              <div class="card quiz-answer-click mb-2" onclick="answer('answer_3')">
+
+                <div class="letter">
+                    C
+                </div>
+
+                <div id="answer_3" class="card-body">
+                  
+                </div>
+              </div>
+
+              <div class="card quiz-answer-click mb-2" onclick="answer('answer_4')">
+
+                <div class="letter">
+                    D
+                </div>
+
+                <div id="answer_4" class="card-body">
+                  
+                </div>
+
+                
+              </div>
+              <div class="progress">
+                <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+              </div>
+
+                <div id="questionFooter" class="question-footer">
+
+                    <button id="backButton" style="display:none" class="next-question-button" ><img  src="img/left-48.png" alt="">
+                    </button>
+
+                    <b id="currentPage" style="display:none" ></b> <div id="numberSpace" style="display:none"> /</div>  <b style="display:none" id="allQuestions"></b>
+
+                    <button style="display:none" id="nextButton"  onclick=" nextQuestion()" class="next-question-button" disabled><img src="img/right-48.png" alt="">
+                    </button>
+                </div>
+
+            </div>
+            <div id="blockAnswer" class="card-body block_double_answer invisible_block hide">
+                
+  
+            </div>
+
+             <div id="endScreen" class="card-body end_screen  " style='display:none' >
+
+                <img src="img/brain result.png" alt="">
+
+                <h3> <b>COMPLETE</b></h3>
+                
+                <span><b>YOUR SCORE</b></span> <span id="endScreenRightAnswer"><b> </b></span> of <span id="endScreenTotalQuestion"><b> </b></span>
+
+                <div class="progress" style="width: 100%;">
+                  <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%">100%</div>
+                </div>
+
+                <button onclick="restartGame()" type="button" class="btn btn-outline-info">HOME</button>
+                <button type="button" class="btn btn-outline-warning">SHARE</button>
+                
+
+              </div> 
+
+              <div id="mainScreen" class="card-body end_screen main_screen  "  >
+
+                
+
+               
+
+             
+                
+
+              </div>
+            
+
+            
+
+        </div>
+    </div>
+       
+</body>
+</html>
